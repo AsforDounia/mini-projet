@@ -11,7 +11,7 @@ int main(){
         printf("Option 3 : Affiche l'etudiant avec la meilleure et la pire note.\n");
         printf("Option 4 : Permet de verifier combien d'etudiants ont une note superieure a la moyenne.\n");
         printf("Option 5 : Quitter le programme.\n");
-        printf("=============================================================\n");
+        printf("================================= \n");
 
         scanf("%d",&Option);
 
