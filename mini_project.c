@@ -17,46 +17,66 @@ int main(){
 
         switch(Option){
             case 1 : 
-                printf("Entrez le nom d'etudiant \n");
-                scanf("%s",noms[nb_etudiants]);
-                printf("Entrez le prenom d'etudiant \n");
-                scanf("%s",prenoms[nb_etudiants]);
-                printf("Entrez la note d'etudiant \n");
-                scanf("%f",&notes[nb_etudiants]);
-                if (notes[nb_etudiants] >= note_max ){
-                    note_max = notes[nb_etudiants];
-                    indice_etudiant_max = nb_etudiants ;
-                }
-                if (notes[nb_etudiants] <= note_min ){
-                    note_min = notes[nb_etudiants];
-                    indice_etudiant_min = nb_etudiants ;
+                if ( nb_etudiants < 100 ){
+                    printf("Entrez le nom d'etudiant \n");
+                    scanf("%s",noms[nb_etudiants]);
+                    printf("Entrez le prenom d'etudiant \n");
+                    scanf("%s",prenoms[nb_etudiants]);
+                    printf("Entrez la note d'etudiant \n");
+                    scanf("%f",&notes[nb_etudiants]);
 
-                }
-                printf("La notes maximale est : %f\n",note_max);
-                printf("La notes minimale est : %f\n",note_min);
+                    if (notes[nb_etudiants] >= note_max ){
+                        note_max = notes[nb_etudiants];
+                        indice_etudiant_max = nb_etudiants ;
+                    }
+                    if (notes[nb_etudiants] <= note_min ){
+                        note_min = notes[nb_etudiants];
+                        indice_etudiant_min = nb_etudiants ;
 
-                nb_etudiants++ ;
+                    }
+                    printf("La notes maximale est : %f\n",note_max);
+                    printf("La notes minimale est : %f\n",note_min);
+                    nb_etudiants++ ;
+                }
+                else{
+                    printf("Vous avez depasse le nombre maximum d'etudiants\n");
+                }
                 break;
-            case 2 : 
-                som = 0;
-                for ( int i = 0 ; i < nb_etudiants ; i++ ){
-                    som = som + notes[i] ;
+            case 2 :
+                if ( nb_etudiants == 0 ){ 
+                        printf("La liste d'etudiants est vide \n");
                 }
-                moy = som / nb_etudiants ;
-                printf("La moyenne d'etudiants est : %f\n",moy);
+                else{
+                    som = 0;
+                    for ( int i = 0 ; i < nb_etudiants ; i++ ){
+                        som = som + notes[i] ;
+                    }
+                    moy = som / nb_etudiants ;
+                    printf("La moyenne d'etudiants est : %f\n",moy);
+                }
                 break ; 
             case 3 :
-                printf("L'etudiant avec la meilleure note est : %s %s\n", noms[indice_etudiant_max] , prenoms[indice_etudiant_max]) ;
-                printf("L'etudiant avec la pire note est : %s %s\n", noms[indice_etudiant_min] , prenoms[indice_etudiant_min]) ;
+                if ( nb_etudiants == 0 ){ 
+                    printf("La liste d'etudiants est vide \n");
+                }
+                else{
+                    printf("L'etudiant avec la meilleure note est : %s %s\n", noms[indice_etudiant_max] , prenoms[indice_etudiant_max]) ;
+                    printf("L'etudiant avec la pire note est : %s %s\n", noms[indice_etudiant_min] , prenoms[indice_etudiant_min]) ;
+                }
                 break ;
             case 4 :
-                etudiant_sup_moy = 0 ;
-                for( int i = 0 ; i < nb_etudiants ; i++ ){
-                    if( notes[i] > moy ){
-                        etudiant_sup_moy++ ;
-                    }
+                if ( nb_etudiants == 0 ){ 
+                        printf("La liste d'etudiants est vide \n");
                 }
-                printf("Le nombre des etudiants ont une note superieure a la moyenne est : %d\n",etudiant_sup_moy);
+                else{
+                    etudiant_sup_moy = 0 ;
+                    for( int i = 0 ; i < nb_etudiants ; i++ ){
+                        if( notes[i] > moy ){
+                            etudiant_sup_moy++ ;
+                        }
+                    }
+                    printf("Le nombre des etudiants ont une note superieure a la moyenne est : %d\n",etudiant_sup_moy);
+                }
                 break ;
             case 5 :
                 break;
