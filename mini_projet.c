@@ -1,10 +1,10 @@
 #include<stdio.h>
-#include<string.h>
+#include<String.h>
 int main(){
-    char nom[20] , prenom[20] ,nom_note_max[20] , prenom_note_max[20] , nom_note_min[20] , prenom_note_min[20];
+    char nom[20] , prenom[20] ,nom_meilleur_note[20] , prenom_meilleur_note[20] , nom_pire_note[20] , prenom_pire_note[20];
     float note ,note_max = 0 ,note_min = 100 , som = 0  , moy , note_sup_moy1 ,note_sup_moy2 ;
     int nb_etudiants = 0 , Option  , etudiant_sup_moy;
-
+    
     do{
         printf("============= Menu ============= \n");
         printf("Option  1 : Ajouter un etudiant \n");
@@ -27,14 +27,14 @@ int main(){
 
                 if (note >= note_max ){
                     note_max = note;
-                    strcpy(nom_note_max,nom);
-                    strcpy(nom_note_max,prenom);
+                    strcpy(nom_meilleur_note,nom);
+                    strcpy(prenom_meilleur_note,prenom);
 
                 }
                 if (note <= note_min ){
                     note_min = note;
-                    strcpy(nom_note_min,nom);
-                    strcpy(nom_note_min,prenom);
+                    strcpy(nom_pire_note,nom);
+                    strcpy(prenom_pire_note,prenom);
                 }
 
                 printf("La notes maximale est : %f\n",note_max);
@@ -49,8 +49,8 @@ int main(){
                 
                 break ; 
             case 3 :
-                printf("L'etudiant avec la meilleure note est : %s %s\n", nom_note_max, prenom_note_max) ;
-                printf("L'etudiant avec la pire note est : %s %s\n", nom_note_min, prenom_note_min) ;
+                printf("L'etudiant %s %s a le meilleur note \n", nom_meilleur_note, prenom_meilleur_note) ;
+                printf("L'etudiant %s %s la pire note \n", nom_pire_note, prenom_pire_note) ;
 
                 break ;
             case 4 :
