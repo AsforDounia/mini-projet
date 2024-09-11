@@ -60,8 +60,8 @@ int main(){
                     printf("La liste d'etudiants est vide \n");
                 }
                 else{
-                    printf("L'etudiant avec la meilleure note est : %s %s\n", noms[indice_etudiant_max] , prenoms[indice_etudiant_max]) ;
-                    printf("L'etudiant avec la pire note est : %s %s\n", noms[indice_etudiant_min] , prenoms[indice_etudiant_min]) ;
+                    printf("L'etudiant %s %s a le meilleur note %f : \n", noms[indice_etudiant_max] , prenoms[indice_etudiant_max] ,notes[indice_etudiant_max] ) ;
+                    printf("L'etudiant %s %s a la pire note \n", noms[indice_etudiant_min] , prenoms[indice_etudiant_min],notes[indice_etudiant_min]) ;
                 }
                 break ;
             case 4 :
